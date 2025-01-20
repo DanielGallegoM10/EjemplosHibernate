@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /*
@@ -24,8 +25,8 @@ public class ProductoTest {
 
         Transaction tx = session.beginTransaction();
 
-        Producto producto1 = new Producto("producto1", 5, 30.00, LocalDate.parse("2025-01-20"), "Descripcion del producto 1");
-        Producto producto2 = new Producto("producto2", 10, 20.50, LocalDate.parse("2025-01-30"), "Descripcion del producto 2");
+        Producto producto1 = new Producto("producto1", 5, BigDecimal.valueOf(30.00), LocalDate.parse("2025-01-20"), "Descripcion del producto 1");
+        Producto producto2 = new Producto("producto2", 10, BigDecimal.valueOf(20.50), LocalDate.parse("2025-01-30"), "Descripcion del producto 2");
 
         session.persist(producto1);
         session.persist(producto2);
@@ -42,8 +43,8 @@ public class ProductoTest {
 
         Transaction tx = session.beginTransaction();
 
-        Producto producto1 = new Producto("producto1", 5, 30.00, LocalDate.parse("2025-01-20"), "Descripcion del producto 1");
-        Producto producto2 = new Producto("producto2", 10, 20.50, LocalDate.parse("2025-01-30"), "Descripcion del producto 2");
+        Producto producto1 = new Producto("producto1", 5, BigDecimal.valueOf(30.00), LocalDate.parse("2025-01-20"), "Descripcion del producto 1");
+        Producto producto2 = new Producto("producto2", 10, BigDecimal.valueOf(20.50), LocalDate.parse("2025-01-30"), "Descripcion del producto 2");
 
         session.persist(producto1);
         session.persist(producto2);
@@ -63,7 +64,7 @@ public class ProductoTest {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
 
-        Producto pr1 = new Producto("producto1", 5, 30.00, LocalDate.parse("2025-01-20"), "Descripcion del producto 1");
+        Producto pr1 = new Producto("producto1", 5, BigDecimal.valueOf(30.00), LocalDate.parse("2025-01-20"), "Descripcion del producto 1");
         pr1.setId(3L);
         pr1.setCantidad(8);
 
@@ -81,7 +82,7 @@ public class ProductoTest {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
 
-        Producto pr1 = new Producto("producto1", 5, 30.00, LocalDate.parse("2025-01-20"), "Descripcion del producto 1");
+        Producto pr1 = new Producto("producto1", 5, BigDecimal.valueOf(30.00), LocalDate.parse("2025-01-20"), "Descripcion del producto 1");
 
         session.persist(pr1);
 

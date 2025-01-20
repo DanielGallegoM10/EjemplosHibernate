@@ -19,7 +19,7 @@
         <property name="hibernate.connection.username">root</property>
 
         <!-- Contraseña del usuario especificado. -->
-        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.password">admin</property>
 
         <!-- Número máximo de conexiones activas en el pool. -->
         <!-- Valores típicos: entre 10 y 100, dependiendo del entorno. -->

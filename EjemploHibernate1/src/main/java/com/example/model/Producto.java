@@ -2,6 +2,7 @@ package com.example.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -17,7 +18,7 @@ public class Producto {
     private Integer cantidad;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private Double precioUnitario;
+    private BigDecimal precioUnitario;
 
     @Column(nullable = false)
     private LocalDate fechaCreacion;
@@ -28,7 +29,7 @@ public class Producto {
     public Producto(){
     }
 
-    public Producto(String nombre, Integer cantidad, Double precioUnitario, LocalDate fechaCreacion, String descripcion) {
+    public Producto(String nombre, Integer cantidad, BigDecimal precioUnitario, LocalDate fechaCreacion, String descripcion) {
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
@@ -60,11 +61,11 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
-    public Double getPrecioUnitario() {
+    public BigDecimal getPrecioUnitario() {
         return precioUnitario;
     }
 
-    public void setPrecioUnitario(Double precioUnitario) {
+    public void setPrecioUnitario(BigDecimal precioUnitario) {
         this.precioUnitario = precioUnitario;
     }
 
