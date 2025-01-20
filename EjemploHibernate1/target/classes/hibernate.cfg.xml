@@ -46,6 +46,7 @@
         <property name="hibernate.hbm2ddl.auto">create</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <!-- Asocia la clase de entidad Employee con Hibernate para que se mapee a una tabla en la base de datos. -->
-        <mapping class="com.example.model.Employee" />
+<!--        <mapping class="com.example.model.Employee" />-->
+        <mapping class="com.example.model.Producto"/>
     </session-factory>
 </hibernate-configuration>
