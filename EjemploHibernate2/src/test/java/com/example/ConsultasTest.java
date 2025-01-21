@@ -27,7 +27,8 @@ public class ConsultasTest {
             tx = session.beginTransaction();
             List libros = session.createQuery("FROM Book").list();
 
-            for (Iterator iterator = libros.iterator(); iterator.hasNext();){
+            Iterator iterator = libros.iterator();
+            while (iterator.hasNext()){
                 Book libro = (Book) iterator.next();
                 System.out.println(libro);
             }

@@ -19,7 +19,7 @@
         <property name="hibernate.connection.username">root</property>
 
         <!-- Contraseña del usuario especificado. -->
-        <property name="hibernate.connection.password">admin</property>
+        <property name="hibernate.connection.password">root</property>
 
         <!-- Número máximo de conexiones activas en el pool. -->
         <!-- Valores típicos: entre 10 y 100, dependiendo del entorno. -->
@@ -43,10 +43,10 @@
             - create-drop: Crea el esquema y lo elimina al cerrar la sesión.
             - export: Exporta el esquema a la base de datos.
         -->
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <!-- Asocia la clase de entidad Employee con Hibernate para que se mapee a una tabla en la base de datos. -->
-<!--        <mapping class="com.example.model.Employee" />-->
+        <mapping class="com.example.model.Employee" />
         <mapping class="com.example.model.Producto"/>
     </session-factory>
 </hibernate-configuration>

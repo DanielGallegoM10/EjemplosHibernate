@@ -1,6 +1,7 @@
 package com.example.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -8,8 +9,10 @@ import java.time.LocalDate;
 @Entity
 public class Producto {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Column(columnDefinition = "CHAR(36)")
+    private String id;
 
     @Column(nullable = false, length = 100)
     private String nombre;
@@ -37,11 +40,11 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
