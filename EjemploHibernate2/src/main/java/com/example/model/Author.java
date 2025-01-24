@@ -21,7 +21,7 @@ public class Author {
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "address_id", unique = true)
     private Address address;
 
@@ -92,7 +92,6 @@ public class Author {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", birthDate=" + birthDate +
-                ", address=" + address +
                 '}';
     }
 }
